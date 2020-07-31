@@ -1,0 +1,61 @@
+.header{
+    display: flex;
+    min-width: 1000px;
+    overflow: hidden;
+    border-color:  #231f1e;
+    width: 100%;
+    max-height: 90px;
+    margin: 0;
+    padding: 0;
+    background-color: #231f1e;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo{
+    position: relative;
+    left: 20px;
+    top:3px;
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 90%;
+    max-height: 90%;
+    min-width: 300px;
+}
+.link{
+    display: inline-block;
+    width: 340px;
+    max-width: 100%;
+    height: auto;
+}
+.preNavWrapper{
+    min-width: 800px;
+    height:90%;
+    width:90%;
+    font-size: 100%;
+    font-family: 'Glacial',Arial,Sans-Serif;
+}
+.preNav{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 20px;
+    height:35px;
+    position: relative;
+    background-color: rgb(238, 27, 36);
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 5% 100%);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.preNav span {
+    font-family: Impact, fantasy;
+   
+    font-size:20px;
+}
+.preNav span:first-child{
+    position: relative;
+    left:50px;
+}
+
+i{
+    padding: 5px;
+    color: black;
+}

@@ -1,0 +1,11 @@
+.link{
+    display: inline-block;
+    padding: 20px;
+    float: right;
+    
+}
+.tag{
+    color: bisque;
+    font: 15px 1.25em/1em 'BebasNeue',Arial,sans-serif;
+    text-decoration: none;
+}
