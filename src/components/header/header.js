@@ -1,15 +1,11 @@
 import React from 'react'
 import Navigation from '../navigation/nav'
 import styles from './header.module.css'
-import logo from './logo2.jpg'
+import Logo from '../logo/logo'
 const Header = () => {
     return (
         <div className={styles.header}>
-            <div className={styles.link}>
-                <a href="#">
-                    <img  src={logo} className={styles.logo}/>
-                </a>
-            </div>
+                <Logo/>
             <div className={styles["pre-navigation-wrapper"]}>
                 <div className={styles["pre-navigation"]}>
                 <span>АВТОСЕРВИЗ ВАРНА  ***** 100 ревюта</span>

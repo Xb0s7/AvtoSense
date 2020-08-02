@@ -1,0 +1,16 @@
+.logo{
+    position: relative;
+    left: 20px;
+    top:3px;
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 90%;
+    max-height: 90%;
+    min-width: 300px;
+}
+.link{
+    display: inline-block;
+    width: 340px;
+    max-width: 100%;
+    height: auto;
+}
