@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './preFooter.module.css'
-const PreFooter = () => {
+import styles from './customer-care-section.module.css'
+const CustomerCareSection = () => {
  return (
-     <div className={styles.preFooter}>
+     <div className={styles["customer-care-section"]}>
          <div className={styles.container}>
              <div className={styles.extra}>
                 <i className="fas fa-tools"></i>
@@ -29,4 +29,4 @@ const PreFooter = () => {
      </div>
  )
 }
-export default PreFooter
+export default CustomerCareSection

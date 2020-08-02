@@ -26,14 +26,14 @@
     max-width: 100%;
     height: auto;
 }
-.preNavWrapper{
+.pre-navigation-wrapper{
     min-width: 800px;
     height:90%;
     width:90%;
     font-size: 100%;
     font-family: 'Glacial',Arial,Sans-Serif;
 }
-.preNav{
+.pre-navigation{
     display: flex;
     flex-wrap: wrap;
     padding: 0px 20px;
@@ -45,12 +45,12 @@
     justify-content: space-between;
 }
 
-.preNav span {
+.pre-navigation span {
     font-family: Impact, fantasy;
    
     font-size:20px;
 }
-.preNav span:first-child{
+.pre-navigation span:first-child{
     position: relative;
     left:50px;
 }

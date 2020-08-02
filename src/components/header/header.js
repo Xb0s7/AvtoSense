@@ -10,8 +10,8 @@ const Header = () => {
                     <img  src={logo} className={styles.logo}/>
                 </a>
             </div>
-            <div className={styles.preNavWrapper}>
-                <div className={styles.preNav}>
+            <div className={styles["pre-navigation-wrapper"]}>
+                <div className={styles["pre-navigation"]}>
                 <span>АВТОСЕРВИЗ ВАРНА  ***** 100 ревюта</span>
                 <span><i className="fas fa-map-marker-alt"></i> ул.Перла №16</span>
                 <span><strong><i className="fas fa-phone-alt"></i>0893626233</strong></span>
