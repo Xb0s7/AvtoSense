@@ -5,7 +5,26 @@
     
 }
 .tag{
+    display: inline-block;
+    position: relative;
     color: bisque;
     font: 15px 1.25em/1em 'BebasNeue',Arial,sans-serif;
     text-decoration: none;
+}
+.tag::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top:100%;
+    left:0;
+    transform: scale(0);
+    background-color: bisque;
+    transform-origin: center;
+    transition: transform 0.25s ease-out;
+
+}
+.tag:hover::before{
+    transform: scaleX(1);
+    transform-origin: center;
 }

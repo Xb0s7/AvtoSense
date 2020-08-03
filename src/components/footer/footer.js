@@ -6,7 +6,9 @@ const Footer = () => {
         <div className={styles.footer}>
             <div className={styles.backround}>
                 <div className={styles.container}>
+                    <div className={styles.logo}>
                     <Logo/>
+                    </div>
                     <div className={styles.information}>
                         <p>0893626233 / 0893626233 / 0893626233</p>
                         <p>Адрес: ул.Перла №16</p>
