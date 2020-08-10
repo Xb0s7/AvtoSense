@@ -1,7 +1,7 @@
-import React from 'react'
-import Navigation from '../navigation/nav'
-import styles from './header.module.css'
-import Logo from '../logo/logo'
+import React from 'react';
+import NavBar from '../navigation/navBar';
+import styles from './header.module.css';
+import Logo from '../logo/logo';
 const Header = () => {
     return (
         <div className={styles.header}>
@@ -12,10 +12,10 @@ const Header = () => {
                 <span><i className="fas fa-map-marker-alt"></i> ул.Перла №16</span>
                 <span><strong><i className="fas fa-phone-alt"></i>0893626233</strong></span>
                 </div>
-                <Navigation className={styles.nav}/>    
+                <NavBar/>    
             </div>
         </div>
     )
 }
 
-export default Header
+export default Header;
