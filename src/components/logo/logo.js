@@ -4,8 +4,8 @@ import logo from '../../images/logo2.jpg'
 const Logo = () => {
     return (
         <div className={styles.link}>
-                <a href="#">
-                    <img  src={logo} className={styles.logo}/>
+                <a href="/">
+                    <img  src={logo} alt="logo" className={styles.logo}/>
                 </a>
         </div>
     )
