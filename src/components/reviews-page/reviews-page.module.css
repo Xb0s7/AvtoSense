@@ -1,0 +1,28 @@
+.reviews-page{
+    
+    background-image: url('./At-the-auto-service-870x483.jpg');
+    overflow: hidden;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    
+}
+.reviews-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+
+.reviews{
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    height: 100%;
+    width: 90%;
+}
