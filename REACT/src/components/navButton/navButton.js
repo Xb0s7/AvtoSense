@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './navButton.module.css'
-import {Link} from 'react-router-dom'
+import styles from './navButton.module.css';
+import {Link} from 'react-router-dom';
 
 const NavButton = ({title, href}) => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import Wrapper from '../page-wrapper/wrapper';
-import Review from '../review/review';
+import Wrapper from '../../components/page-wrapper/wrapper';
+import Review from '../../components/review/review';
 import styles from './reviews-page.module.css';
 import ReactPaginate from 'react-paginate';
 class ReviewsPage extends React.Component {

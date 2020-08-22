@@ -68,11 +68,8 @@
     font-family: sans-serif;
     color:white;
 }
-.directions:hover{
-    background-color: red;
-    
-}
 .directions a:hover{
+    background-color: red;
     color:black;
     
 }

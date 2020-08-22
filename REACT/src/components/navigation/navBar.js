@@ -1,6 +1,6 @@
-import React from 'react'
-import NavButton from '../navButton/navButton'
-import styles from './navBar.module.css'
+import React from 'react';
+import NavButton from '../navButton/navButton';
+import styles from './navBar.module.css';
 const NavBar = () =>{
     return (
         <nav className={styles.nav}>
@@ -8,7 +8,7 @@ const NavBar = () =>{
             <NavButton title="Services" href="services"/>
             <NavButton title="Reviews" href="reviews"/>
             <NavButton title="Directions" href="directions"/>
-            <NavButton title="Schedule" href="schedule"/>
+            <NavButton title="Login" href="login"/>
         </nav>
     )
 }
