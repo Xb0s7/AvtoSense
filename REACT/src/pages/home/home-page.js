@@ -1,8 +1,8 @@
 import React from 'react';
-import Wrapper from '../page-wrapper/wrapper';
-import Card from '../card/card';
+import Wrapper from '../../components/page-wrapper/wrapper';
+import Card from '../../components/card/card';
 import styles from './home-page.module.css';
-import CustomerCareSection from '../customer-care/customer-care';
+import CustomerCareSection from '../../components/customer-care/customer-care';
 
 function Home() {
   return(
