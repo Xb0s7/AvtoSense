@@ -13,12 +13,40 @@ class Login extends Component {
     }
 
 
-    handleChange = (e, type) =>{
-        this.setState({type: e.target.value});
+    handleChange =  (e, type) =>{
+        const newState = {};
+        newState[type] = e.target.value;
+        this.setState(newState);
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
+        const {
+            email,
+            password
+        } = this.state
+        try{
+            
+            const promise = await fetch('http://localhost:9999/api/user/login', {
+            method: 'POST',
+                body: JSON.stringify({
+                    email,
+                    password
+                }),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            })
+            const authToken = promise.headers.get('Authorization');
+            document.cookie = `x-auth-token=${authToken}`;
+            const response = await promise.json();
+
+            if(response.email && authToken){
+                this.props.history.push('/');
+            }
+        } catch(e){
+            console.log(e);
+        }
     }
     render(){
         return(
@@ -26,9 +54,9 @@ class Login extends Component {
                 <div className={styles.container}>
                     <form onSubmit={this.handleSubmit} className={styles.form}>
                         <label>Email</label>
-                            <input type="text" className={styles.inputs} value={this.state.value} onChange={(e) =>this.handleChange(e, "email")}/>
+                            <input type="text" className={styles.inputs}  onChange={(e) =>this.handleChange(e, "email")}/>
                         <label>Password</label>
-                            <input type="password" className={styles.inputs} value={this.state.value} onChange={(e) => this.handleChange(e, "password")}/>
+                            <input type="password" className={styles.inputs}  onChange={(e) => this.handleChange(e, "password")}/>
                         <button type="submit" className={styles.login}>Log In</button>
                         <p className={styles["to-register"]}>
                             You dont have an account?

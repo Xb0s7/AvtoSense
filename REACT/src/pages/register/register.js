@@ -14,14 +14,38 @@ class Register extends Component {
     }
 
     
-    handleChange = (e, type) =>{
-        this.setState({type: e.target.value});
+    handleChange =  (e, type) =>{
+        const newState = {};
+        newState[type] = e.target.value;
+        this.setState(newState);
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
+        const {
+            email,
+            password,
+        } = this.state;
+        
+        try{
+            const promise = await fetch('http://localhost:9999/api/user/register', {
+            method: 'POST',
+                body: JSON.stringify({
+                    email,
+                    password
+                }),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
+            })
+            const response = await promise.json();
+            if(response.email){
+                this.props.history.push('/login');
+            }
+        } catch(e){
+            console.log(e);
+        }
     }
-
     render(){
         return(
             <Wrapper>
