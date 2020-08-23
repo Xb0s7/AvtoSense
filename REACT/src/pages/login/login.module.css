@@ -50,3 +50,10 @@
     background-color: red;
     color:black;
 }
+.register{
+    margin: 5px;
+    color: rgb(189,190,192);
+}
+.register:hover{
+    color: red;
+}

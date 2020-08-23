@@ -47,20 +47,21 @@
 .information p{
     font-weight: bolder;
 }
-.directions{
+.directions-button{
     display: block;
     height: 60px;
     width: 200px;
     position: relative;
     text-align: center;
-    left: 30px;
     background-color: black;
+    right:20px;
+
     font-size: 20px;
     text-decoration: none;
     font-family: sans-serif;
     border: 3px solid white;
 }
-.directions a{
+.directions-button a{
     display: block;
     height: 100%;
     width: 100%;
@@ -68,17 +69,17 @@
     font-family: sans-serif;
     color:white;
 }
-.directions a:hover{
+.directions-button a:hover{
     background-color: red;
     color:black;
     
 }
-.directions span{
+.directions-button span{
     position: relative;
     top:17px;
 }
 .logo{
     display: block;
     position: relative;
-    right:60px;
+    right:40px;
 }
