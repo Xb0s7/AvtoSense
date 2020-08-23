@@ -10,10 +10,10 @@ const Footer = () => {
                     <Logo/>
                     </div>
                     <div className={styles.information}>
-                        <p>0893626233 / 0893626233 / 0893626233</p>
-                        <p>Адрес: ул.Перла №16</p>
-                        <p>Понеделинк - Петък: 9:00 - 18:00</p>
-                        <p>Събота: 9:00 - 14:00</p>
+                        <p>0893626233 </p>
+                        <p>Adress: ul.Perla №16</p>
+                        <p>Monday - Friday: 9:00 - 18:00</p>
+                        <p>Saturday: 9:00 - 14:00</p>
                     </div>
                     <div className={styles.directions}>
                         <a href="/directions"> 

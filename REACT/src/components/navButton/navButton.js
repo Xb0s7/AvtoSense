@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const NavButton = ({title, href}) => {
     return (
         <li className={styles.link}>
-            <Link to={href} className={styles.tag}>
+            <Link to={href} className={styles.tag} >
                 {title}
             </Link>
         </li>

@@ -33,7 +33,6 @@
 
 .pre-navigation span {
     font-family: Impact, fantasy;
-   
     font-size:20px;
 }
 .pre-navigation span:first-child{
@@ -41,7 +40,9 @@
     left:50px;
 }
 
+
 i{
     padding: 5px;
     color: black;
 }
+
