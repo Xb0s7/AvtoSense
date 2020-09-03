@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../logo/logo'
 import styles from './footer.module.css'
+import {Link} from 'react-router-dom'
 const Footer = () => {
     return (
         <div className={styles.footer}>
@@ -15,10 +16,10 @@ const Footer = () => {
                         <p>Monday - Friday: 9:00 - 18:00</p>
                         <p>Saturday: 9:00 - 14:00</p>
                     </div>
-                    <div className={styles.directions}>
-                        <a href="/directions"> 
+                    <div className={styles["directions-button"]}>
+                        <Link to="/directions"> 
                         <span>Get Directions</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

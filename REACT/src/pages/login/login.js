@@ -66,8 +66,8 @@ class Login extends Component {
                         <input type="password" className={styles.inputs} onChange={(e) => this.handleChange(e, "password")} />
                         <button type="submit" className={styles.login}>Log In</button>
                         <p className={styles["to-register"]}>
-                            You dont have an account?
-                            <Link to="register" >Register Now!</Link>
+                            You dont have an account? 
+                            <Link to="register" className={styles.register}>Register Now!</Link>
                         </p>
 
                     </form>
