@@ -1,0 +1,85 @@
+.footer{
+    background-image: url('./hUaYRI.jpg');
+    width: 100%;
+    min-height: 250px;
+    max-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    font-size: 100%;
+    font-family: 'Glacial',Arial,Sans-Serif;
+    text-decoration: none;
+    vertical-align: baseline;
+}
+.backround{
+    background-color: rgb(0,0,0, 0.7);
+    width: 100%;
+    height: 300px;
+}
+
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 12px;
+    padding-right: 12px;
+    min-width: 1100px;
+    max-width:1200px;
+    height:100%;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+.information{
+    position: relative;
+    left:10px;
+    font-size: 22px;
+    width:50%;
+    color: rgb(189,190,192);
+    
+}
+.information p:first-child{
+    font-weight: bold;
+    color: red;
+}
+.information p{
+    font-weight: bolder;
+}
+.directions-button{
+    display: block;
+    height: 60px;
+    width: 200px;
+    position: relative;
+    text-align: center;
+    background-color: black;
+    right:100px;
+
+    font-size: 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: 3px solid white;
+}
+.directions-button a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    font-family: sans-serif;
+    color:white;
+}
+.directions-button a:hover{
+    background-color: red;
+    color:black;
+    
+}
+.directions-button span{
+    position: relative;
+    top:17px;
+}
+.logo{
+    display: block;
+    width: 80%;
+    height: 80%;
+}

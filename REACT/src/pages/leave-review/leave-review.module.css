@@ -1,0 +1,66 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+    height:500px;
+}
+
+.form{
+    width:60%;
+    border-style: solid;
+    border-color:rgb(189,190,192);;
+    padding: 10px;
+    margin:10px;
+    color: rgb(189,190,192);;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    font-weight: bold;
+}
+.label{
+    display: flex;
+    flex-direction: column;
+}
+.inputs{
+    margin:10px 0px;
+    width: 400px;
+    border: 3px solid #aaaeaf;
+    padding: 10px 20px;
+    height: 25px;
+    background: white;
+    color: black;
+    font: 400 16px/1.5em 'Glacial',Arial,sans-serif;
+}
+
+.review{
+    margin: 10px 0px;
+    border: 3px solid #aaaeaf;
+    height: 150px;
+    background: white;
+    color: black;
+    font: 400 16px/1.5em 'Glacial',Arial,sans-serif;
+}
+.post{
+    position: relative;
+    top:10px;
+    margin:30px 0px;
+    color:rgb(189,190,192);;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    background-color: black;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    border: 3px solid white;
+}
+
+.post:hover{
+    background-color: red;
+    color:black;
+}

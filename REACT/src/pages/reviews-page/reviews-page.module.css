@@ -1,0 +1,95 @@
+.reviews-page{
+    
+    background-image: url('./At-the-auto-service-870x483.jpg');
+    overflow: hidden;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 900px;
+    
+}
+.reviews-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0, 0.9);
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+
+.reviews{
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    height: 100%;
+    width: 90%;
+}
+.review-button-div{
+  position: relative;
+  bottom: 20px;
+  left:25px;
+  display: block;
+  height: 50px;
+  width: 200px;
+  background-color: black;
+  font-size: 20px;
+  text-decoration: none;
+  font-family: sans-serif;
+  border: 3px solid white;
+    
+}
+.review-button-div a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  font-family: sans-serif;
+  color:white;
+
+}
+
+.review-button-div:hover{
+    background-color: red;
+    
+}
+.review-button-div a:hover{
+  color:black;
+    
+}
+
+.pagination {
+    margin: 25px auto;
+    width:200px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    list-style: none;
+    outline: none;
+  }
+  .pagination > .active > a{
+    background-color: red;
+    border-color: white ;
+    color: black;
+  }
+  .pagination > li > a{
+    border: 1px solid white ;
+    padding: 10px 15px;
+    outline: none;
+    cursor: pointer;
+  }
+  .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    background-color: red;
+    border-color: white;
+    outline: none ;
+  }
+  .pagination > li > a, .pagination > li > span{
+    color: red
+  }
+  .pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
+    border-radius: unset
+  }
