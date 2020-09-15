@@ -47,6 +47,15 @@ class ReviewsPage extends React.Component {
         this.getReviews();
     }
     render() {
+        let button;
+        if(this.context.loggedIn){
+            button =
+            <div className={styles["review-button-div"]}>
+                <Link to="leaveareview"><span>Leave a Review</span></Link>
+           </div>;
+        } else {
+            button = null;
+        }
         return (
             <Wrapper>
                 <div className={styles["reviews-page"]}>
@@ -66,9 +75,7 @@ class ReviewsPage extends React.Component {
                                 subContainerClassName={styles["pages-pagination"]}
                                 activeClassName={styles["active"]} />
                         </div>
-                        <div className={styles["review-button-div"]}>
-                            <Link to="leaveareview"><span>Leave a Review</span></Link>
-                        </div>;
+                        {button}
                     </div>
                 </div>
             </Wrapper>

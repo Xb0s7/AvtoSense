@@ -39,14 +39,14 @@ class Login extends Component {
                 }
             })
             const authToken = promise.headers.get('Authorization');
-            document.cookie = `x-auth-token=${authToken}`;
+            document.cookie = `Autorization=${authToken}`;
             const response = await promise.json();
             const user = {
                 email: response.email,
                 id: response._id
             }
             await this.context.logIn(user);
-            console.log(this.context)
+            
             if (response.email && authToken) {
 
                 this.props.history.push('/');
