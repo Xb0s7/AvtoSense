@@ -1,71 +1,71 @@
-import React, { Component } from 'react';
+import React, { useContext, useState } from 'react';
 import Wrapper from '../../components/page-wrapper/wrapper';
 import UserContext from '../../utils/context';
 import styles from './leave-review.module.css'
 
-class LeaveReview extends Component {
-    constructor(props){
-        super(props)
+const LeaveReview = (props) => {
 
-        this.state = {
-            firstName: "",
-            lastName: "",
-            review: ''
-        };
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [review, setReview] = useState("")
+
+    const {user } = useContext(UserContext)
+
+    const handleChange = (e, type) => {
+        switch (type) {
+            case 'firstName':
+                setFirstName(e.target.value)
+                break;
+            case 'lastName':
+                setLastName(e.target.value)
+                break;
+            case 'review':
+                setReview(e.target.value)
+                break;
+            default:
+                break;
+        }
     }
-    static contextType = UserContext
-    handleChange =  (e, type) =>{
-        const newState = {};
-        newState[type] = e.target.value;
-        this.setState(newState);
-    }
-    handleSubmit = async (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const {
-            firstName,
-            lastName,
-            review
-        } = this.state;
-        console.log(this.context.user);
-        try{
+        try {
             const promise = await fetch('http://localhost:9999/api/reviews', {
-            method: 'POST',
+                method: 'POST',
                 body: JSON.stringify({
                     firstName,
                     lastName,
                     review,
-                    email: this.context.user.email
+                    email: user.email
                 }),
-                headers:{
+                headers: {
                     'Content-Type': 'application/json'
                 }
             })
             const response = await promise.json();
-            if(response){
-                this.props.history.push('/reviews');
+            if (response) {
+                props.history.push('/reviews');
             }
-        } catch(e){
+        } catch (e) {
             console.log(e);
         }
     }
-    render(){
-        return(
-            <Wrapper>
-                <div className={styles.container}>
-                    <form onSubmit={this.handleSubmit} className={styles.form}>
-                        <label>First Name</label>
-                            <input type="text" className={styles.inputs} value={this.state.value} onChange={(e) =>this.handleChange(e, "firstName")}/>
-                        <label>Last Name</label>
-                            <input type="text" className={styles.inputs} value={this.state.value} onChange={(e) => this.handleChange(e, "lastName")}/>
-                        <label>Review</label>
-                            <textarea type="text" maxLength="450" className={styles.review} value={this.state.value} onChange={(e) => this.handleChange(e, "review")}/>    
-                        <button type="submit" className={styles.post}>Post</button>
-                    </form>
-                </div>
-            </Wrapper>
-        )
-    }
 
-    
+    return (
+        <Wrapper>
+            <div className={styles.container}>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <label>First Name</label>
+                    <input type="text" className={styles.inputs} onChange={(e) => handleChange(e, "firstName")} />
+                    <label>Last Name</label>
+                    <input type="text" className={styles.inputs} onChange={(e) => handleChange(e, "lastName")} />
+                    <label>Review</label>
+                    <textarea type="text" maxLength="450" className={styles.review}  onChange={(e) => handleChange(e, "review")} />
+                    <button type="submit" className={styles.post}>Post</button>
+                </form>
+            </div>
+        </Wrapper>
+    )
+
 }
 export default LeaveReview

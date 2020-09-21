@@ -4,10 +4,10 @@ import mapStyles from './mapStyles';
 import styles from './map.module.css'
 
 const Map = () => {
-    const [travelMode, setTravelMode] = useState("DRIVING");
+    const [travelMode] = useState("DRIVING");
     const [origin, setOrigin] = useState('');
     const [response, setResponse] = useState(null);
-    const [destination, setDestination] = useState('ул.Перла 16')
+    const [destination] = useState('ул.Перла 16')
     let origins;
     const directionsCallback = (resp) => {
         console.log(resp)
@@ -25,8 +25,6 @@ const Map = () => {
         origins = ref;
     }
     const onClick = (e) => {
-        console.log(origins.value)
-        let text = origins.value;
         e.preventDefault();
         if (origins.value !== '') {
             setOrigin(origins.value)

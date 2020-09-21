@@ -1,67 +1,64 @@
-import React, { Component } from 'react';
+import React, { useState} from 'react';
 import styles from './register.module.css';
 import Wrapper from '../../components/page-wrapper/wrapper';
 
-class Register extends Component {
-    constructor(props){
-        super(props);
+const Register = (props) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-        this.state = {
-            email: "",
-            password: "",
-            rePassword: ""
+    const handleChange = (e, type) => {
+        switch (type) {
+            case 'email':
+                setEmail(e.target.value)
+                break;
+            case 'password':
+                setPassword(e.target.value)
+                break;
+            case 'rePassword':
+                setPassword(e.target.value)
+                break;
+            default:
+                break;
         }
     }
 
-    
-    handleChange =  (e, type) =>{
-        const newState = {};
-        newState[type] = e.target.value;
-        this.setState(newState);
-    }
-
-    handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const {
-            email,
-            password,
-        } = this.state;
-        
-        try{
+
+        try {
             const promise = await fetch('http://localhost:9999/api/user/register', {
-            method: 'POST',
+                method: 'POST',
                 body: JSON.stringify({
                     email,
                     password
                 }),
-                headers:{
+                headers: {
                     'Content-Type': 'application/json'
                 }
             })
             const response = await promise.json();
-            if(response.email){
-                this.props.history.push('/login');
+            if (response.email) {
+                props.history.push('/login');
             }
-        } catch(e){
+        } catch (e) {
             console.log(e);
         }
     }
-    render(){
-        return(
-            <Wrapper>
-                <div className={styles.container}>
-                    <form onSubmit={this.handleSubmit} className={styles.form}>
-                        <label>Email</label>
-                            <input type="text" className={styles.inputs} value={this.state.value} onChange={(e) =>this.handleChange(e, "email")}/>
-                        <label>Password</label>
-                            <input type="password" className={styles.inputs} value={this.state.value} onChange={(e) => this.handleChange(e, "password")}/>
-                        <label>Re-Password</label>
-                            <input type="password" className={styles.inputs} value={this.state.value} onChange={(e) => this.handleChange(e, "rePassword")}/>    
-                        <button type="submit" className={styles.register}>Register</button>
-                    </form>
-                </div>
-            </Wrapper>
-        )
-    }
+
+    return (
+        <Wrapper>
+            <div className={styles.container}>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <label>Email</label>
+                    <input type="text" className={styles.inputs}  onChange={(e) => handleChange(e, "email")} />
+                    <label>Password</label>
+                    <input type="password" className={styles.inputs}  onChange={(e) => handleChange(e, "password")} />
+                    <label>Re-Password</label>
+                    <input type="password" className={styles.inputs} v onChange={(e) => handleChange(e, "rePassword")} />
+                    <button type="submit" className={styles.register}>Register</button>
+                </form>
+            </div>
+        </Wrapper>
+    )
 }
 export default Register

@@ -1,33 +1,30 @@
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './login.module.css';
 import Wrapper from '../../components/page-wrapper/wrapper';
 import { Link } from 'react-router-dom';
 import UserContext from '../../utils/context';
-class Login extends Component {
-    constructor(props) {
-        super(props);
+const Login = (props) => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const { logIn } = useContext(UserContext);
 
-        this.state = {
-            email: '',
-            password: ''
+    const handleChange = (e, type) => {
+        switch (type) {
+            case 'email':
+                setEmail(e.target.value)
+                break;
+            case 'password':
+                setPassword(e.target.value)
+                break;
+            default:
+                break;
         }
     }
-    static contextType = UserContext;
 
-    handleChange = (e, type) => {
-        const newState = {};
-        newState[type] = e.target.value;
-        this.setState(newState);
-    }
-
-    handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const {
-            email,
-            password
-        } = this.state
-        try {
 
+        try {
             const promise = await fetch('http://localhost:9999/api/user/login', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -45,35 +42,33 @@ class Login extends Component {
                 email: response.email,
                 id: response._id
             }
-            await this.context.logIn(user);
-            
+            await logIn(user);
+
             if (response.email && authToken) {
 
-                this.props.history.push('/');
+                props.history.push('/');
             }
         } catch (e) {
             console.log(e);
         }
     }
-    render() {
-        return (
-            <Wrapper>
-                <div className={styles.container}>
-                    <form onSubmit={this.handleSubmit} className={styles.form}>
-                        <label>Email</label>
-                        <input type="text" className={styles.inputs} onChange={(e) => this.handleChange(e, "email")} />
-                        <label>Password</label>
-                        <input type="password" className={styles.inputs} onChange={(e) => this.handleChange(e, "password")} />
-                        <button type="submit" className={styles.login}>Log In</button>
-                        <p className={styles["to-register"]}>
-                            You dont have an account? 
-                            <Link to="register" className={styles.register}>Register Now!</Link>
-                        </p>
 
-                    </form>
-                </div>
-            </Wrapper>
-        )
-    }
+    return (
+        <Wrapper>
+            <div className={styles.container}>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                    <label>Email</label>
+                    <input type="text" className={styles.inputs} onChange={(e) => handleChange(e, "email")} />
+                    <label>Password</label>
+                    <input type="password" className={styles.inputs} onChange={(e) => handleChange(e, "password")} />
+                    <button type="submit" className={styles.login}>Log In</button>
+                    <p className={styles["to-register"]}>
+                        You dont have an account?
+                            <Link to="register" className={styles.register}>Register Now!</Link>
+                    </p>
+                </form>
+            </div>
+        </Wrapper>
+    )
 }
 export default Login
